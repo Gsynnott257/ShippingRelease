@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:ShippingRelease.ViewModels"
+             x:DataType="viewmodel:LoginViewModel"
+             x:Class="ShippingRelease.Views.LoginPage"
+             Title="LoginPage"
+             BackgroundColor="#FFD1DC">
+    <!-- Light Pink Background -->
+
+    <ScrollView VerticalScrollBarVisibility="Always" VerticalOptions="FillAndExpand">
+        <VerticalStackLayout>
+            <Frame CornerRadius="50" WidthRequest="120" HeightRequest="120" Margin="0,20,0,0" Padding="0" BorderColor="#D2B48C" BackgroundColor="#FFD1DC">
+                <!-- Tan Border -->
+                <Image Source="truckicon.png" WidthRequest="80" HeightRequest="80" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+            </Frame>
+
+            <StackLayout Orientation="Vertical" Spacing="10" Margin="0,20,0,0">
+                <Label Text="Welcome" FontAttributes="Bold" FontSize="Large" TextColor="#8B4513"
+                    HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                <!-- SaddleBrown Text -->
+                <Label Text="Sign in to continue" TextColor="#8B4513" FontAttributes="Bold"
+                    HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                <!-- SaddleBrown Text -->
+            </StackLayout>
+
+            <!--Grid-->
+            <Grid RowDefinitions="*, *" Margin="0,50,0,0" Padding="10" RowSpacing="10" HorizontalOptions="Center">
+                <StackLayout Orientation="Horizontal" Grid.Row="0">
+                    <Image Source="username.png" WidthRequest="30" HeightRequest="30"></Image>
+                    <Entry Text="{Binding Email}" WidthRequest="300" HeightRequest="50" Margin="10,0,0,0" PlaceholderColor="#D2B48C" 
+                        Placeholder="Email Address" FontAttributes="Bold" BackgroundColor="#FFF0F5">
+                        <!-- LavenderBlush Background, Tan Placeholder -->
+                    </Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Row="1">
+                    <Image Source="lock.png" WidthRequest="30" HeightRequest="30"></Image>
+                    <Entry Text="{Binding Password}" IsPassword="True" WidthRequest="300" HeightRequest="50" Margin="10,0,0,0" PlaceholderColor="#D2B48C" Placeholder="Password" FontAttributes="Bold" BackgroundColor="#FFF0F5">
+                        <!-- LavenderBlush Background, Tan Placeholder -->
+                    </Entry>
+                </StackLayout>
+            </Grid>
+
+            <Button Command="{Binding SigninCommand}" FontAttributes="Bold" Text="Sign In" CornerRadius="10" FontSize="Large" 
+                    VerticalOptions="Center" Margin="30,0,30,0" BackgroundColor="#8B4513" TextColor="White"></Button>
+            <!-- Hot Pink Button -->
+
+            <StackLayout Margin="0,20,0,0" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="New User?" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#8B4513"
+                    FontSize="Small"></Label>
+                <!-- SaddleBrown Text -->
+                <Button Command="{Binding GoToRegisterPageCommand}" Text="Sign Up" FontSize="Small" TextColor="#8B4513" FontAttributes="Bold" BorderWidth="0" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent"></Button>
+                <!-- Hot Pink Text -->
+            </StackLayout>
+            <StackLayout Margin="0,30,0,0" Orientation="Horizontal" HorizontalOptions="Center"></StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

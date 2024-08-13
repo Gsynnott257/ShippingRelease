@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:ShippingRelease.ViewModels"
+             x:DataType="viewmodel:HomeViewModel"
+             x:Class="ShippingRelease.Views.HomePage"
+             Title="HomePage"
+             BackgroundColor="#8B4513">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Pink Text Style -->
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="#FFD1DC"/>
+                <!-- Hot Pink Text -->
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView VerticalScrollBarVisibility="Always" VerticalOptions="FillAndExpand">
+        <VerticalStackLayout>
+            <Grid RowDefinitions="150, 50, 150, 50" ColumnDefinitions="150,150" Padding="10" HorizontalOptions="Center">
+                <Button ImageSource="truckicon.png" Command="{Binding ShippingPageCommand}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="140" HeightRequest="140" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="Small" Padding="10" BorderColor="Black" BackgroundColor="#FFD1DC"></Button>
+                <Button ImageSource="logout.png" Command="{Binding LogoutCommand}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="140" HeightRequest="140" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" FontSize="Small" Padding="10" BorderColor="Black" BackgroundColor="#FFD1DC"></Button>
+                <Label Text="Shipping" FontSize="Small" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Label Text="Logout" FontSize="Small" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
