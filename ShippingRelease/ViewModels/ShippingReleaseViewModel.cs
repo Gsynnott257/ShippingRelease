@@ -8,6 +8,7 @@ using System.Diagnostics;
 
 namespace ShippingRelease.ViewModels;
 //piukhkhj
+//sdfsdf
 public partial class ShippingReleaseViewModel : ObservableObject
 {
     [ObservableProperty]
